@@ -27,7 +27,6 @@ export default function Contato() {
 
   return (
     <section className="login">
-      {/*condição ternária */}
       {getUsuario && getSenha ? (
         <Produtos/>
       ) : (
