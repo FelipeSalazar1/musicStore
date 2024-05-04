@@ -7,6 +7,7 @@
 .login {
     display: flex;
     justify-content: center;
+    margin: 10rem auto 20rem auto;
 
 form {
     display: flex;
@@ -25,8 +26,18 @@ p {
 input {
     height: 2rem;
     border-radius: 0.3rem;
+    padding: 1rem;
 }
 
+.btn_enter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    background-color: rgba(167, 139, 250, 1);
+}
 }
 
 .tittle{

@@ -34,14 +34,14 @@ export default function Contato() {
         <form onSubmit={handleSubmit} >
         <h1 className='tittle'>Sign In</h1>
           <p>
-            USUÁRIO: <br/>
+            USUÁRIO <br/>
             <input type="text" placeholder="Digite seu Usuário" ref={usuario} />
           </p>
           <p>
-            SENHA: <br/>
+            SENHA <br/>
             <input type="password" placeholder="Digite sua senha" ref={senha} />
           </p>
-          <button type="submit">ENTRAR</button>
+          <button type="submit" className='btn_enter'>ENTRAR</button>
         </form>
       )}
     </section>
