@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import Produtos from './Produtos';
+import '../Scss/Login.scss'
 
 export default function Contato() {
   /* Hook- useRef ele retorna uma referencia a um elemento ou componentsem tem que ter que ser
@@ -31,12 +32,13 @@ export default function Contato() {
         <Produtos/>
       ) : (
         <form onSubmit={handleSubmit} >
+        <h1 className='tittle'>Sign In</h1>
           <p>
-            USUÁRIO:
+            USUÁRIO: <br/>
             <input type="text" placeholder="Digite seu Usuário" ref={usuario} />
           </p>
           <p>
-            SENHA:
+            SENHA: <br/>
             <input type="password" placeholder="Digite sua senha" ref={senha} />
           </p>
           <button type="submit">ENTRAR</button>
