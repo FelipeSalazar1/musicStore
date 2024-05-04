@@ -15,10 +15,6 @@ export default function Nav() {
               Contato
             </Link>
 
-            <Link to="/Produtos" className="tlink">
-              Produtos
-            </Link>
-
             <Link to="/Login" className="tlink">
               Login
             </Link>
