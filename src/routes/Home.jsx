@@ -3,16 +3,7 @@ import {} from 'react';
 function Home() {
   return (
     <>
-      <div className="container bg-image">
-        <div className="produtos">
-          <h1>Produtos</h1>
-
-          <p>CONHEÇAS OS NOVOS PRODUTOS DA LOJA</p>
-          <a href="" className="btn">
-            Conheça mais
-          </a>       
-        </div>
-      </div>
+    <h1>Home</h1>
     </>
   );
 }

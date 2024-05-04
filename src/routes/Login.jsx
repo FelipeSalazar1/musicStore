@@ -1,5 +1,8 @@
-export default function Login() {
-    /* Hook- useRef ele retorna uma referencia a um elemento ou componentsem tem que ter que ser
+import { useRef } from 'react';
+import Produtos from './Produtos';
+
+export default function Contato() {
+  /* Hook- useRef ele retorna uma referencia a um elemento ou componentsem tem que ter que ser
   renderizado novamente*/
   const usuario = useRef();
   const senha = useRef();
@@ -22,12 +25,11 @@ export default function Login() {
     }
   };
 
-    return (
-      <>
-      <section className="login">
+  return (
+    <section className="login">
       {/*condição ternária */}
       {getUsuario && getSenha ? (
-        <Portifolio/>
+        <Produtos/>
       ) : (
         <form onSubmit={handleSubmit} >
           <p>
@@ -42,6 +44,5 @@ export default function Login() {
         </form>
       )}
     </section>
-      </>
-    )
+    );
   }
