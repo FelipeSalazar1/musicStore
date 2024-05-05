@@ -15,7 +15,20 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    h1{
-        font-size: 5.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 7rem;
+    padding-left: 9rem;
+    
+    #cont-home{
+        text-align: left;
+        width: 55rem;
+        
+        h1{
+            color: #fff;
+            font-size: 5.6rem;
+        }
     }
+    
 }

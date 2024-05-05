@@ -9,30 +9,40 @@
 }
 
 .menu{
-    padding: 2rem;
+    padding: 3rem;
     width: 100%;
     position: fixed;
-
+    
     .nav-menu{
         background-color: rgba(0,0,0,0);
         display: flex;
         justify-content: space-between;
-    }
+    
         #cont-left-nav{
             display: flex;
             justify-content: space-around;
-            width: 70%;
+            width: 60%;
             ul{
                 align-items: center;
                 display: flex;
-                justify-content: space-evenly;
-                gap: 2.4rem;
+                gap: 7rem;
                 .tlink{
                     color: #fff;
                     text-decoration: none;
-                    font-size: 1.8rem;
+                    font-size: 2rem;
                 }
             }
         }
+        #icons-nav{
+            width: 40%;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: end;
+            padding-right: 7rem;
+            
+        }
+    
+    }
         
     }

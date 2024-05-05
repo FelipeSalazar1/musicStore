@@ -5,7 +5,10 @@ function Home() {
   return (
     <>
     <section id='home'>
-      <h1>Fullfilling dreams with strings attached</h1>
+      <div id='cont-home'>
+        <h1>Fullfilling dreams with strings attached</h1>
+      </div>
+      
     </section>
     
     </>
