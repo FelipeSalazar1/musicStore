@@ -1,11 +1,16 @@
 import {} from 'react';
 import { Link } from 'react-router-dom';
+import '../Scss/Nav.scss'
+import Logo from '../assets/icon-nav.svg'
+import Cart from '../assets/icon-cart.svg'
+import Profile from '../assets/profile.svg'
 
 export default function Nav() {
   return (
     <>
       <header className="menu">
         <nav className="nav-menu">
+          <img src={Logo} alt="logo-nav" />
           <ul>
             <Link to="/" className="tlink">
               Home
@@ -19,6 +24,10 @@ export default function Nav() {
               Login
             </Link>
           </ul>
+          <div id='icons-nav'>
+            <img src={Cart} alt="carrinho"/>
+            <img src={Profile} alt="carrinho"/>
+          </div>
         </nav>
       </header>
     </>

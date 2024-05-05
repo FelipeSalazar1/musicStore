@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Work Sans;
+}
+
+.menu{
+    padding: 2rem;
+    width: 100%;
+
+    .nav-menu{
+        background-color: aqua;
+        display: flex;
+        justify-content: space-evenly;
+        ul{
+            align-items: center;
+            display: flex;
+            justify-content: space-around;
+            .tlink{
+                text-decoration: none;
+            }
+        }
+    }
+}
