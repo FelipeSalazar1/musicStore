@@ -44,13 +44,13 @@ export default function Contato() {
           
           <button className="btn_enter" type="button">
             <strong>ENTRAR</strong>
-            <div id="container-stars">
-              <div id="stars"></div>
+            <div className="container-stars">
+              <div className="stars"></div>
             </div>
 
-            <div id="glow">
-              <div class="circle"></div>
-              <div class="circle"></div>
+            <div className="glow">
+              <div className="circle"></div>
+              <div className="circle"></div>
             </div>
           </button>
           
