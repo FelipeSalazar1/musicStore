@@ -8,6 +8,10 @@
     font-size: 62.5%;
 }
 
+html {
+    background-color: #212121;
+}
+
 .login {
     display: flex;
     justify-content: center;
@@ -21,6 +25,7 @@ form {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     padding: 5rem;
     border-radius: 1.3rem;
+    background-color: #e8e8e8;
 }
 
 p {
