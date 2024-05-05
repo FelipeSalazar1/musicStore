@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #353535;
+
+  h1{
+    font-family: Poppins;
+  }
+}
+
+
+
+
+.form-title,
+button {
+  font-size: 5.4rem;
+  color: #000;
+  background-color: #c4c4c4;
+  font-family: Poppins;
+  text-align: center;
+  padding: 2rem 2rem;
+  width: 46rem;
+  font-weight: bold;
+  border-radius: 15px;
+  margin: 4rem 0;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  font-family: Open Sans;
+  gap: 2rem;
+  background-color: #353535;
+
+  .form-input {
+    width: 100%;
+    padding: 2rem;
+    border: none;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #939191;
+    border-radius: 20px;
+    font-size: 2.6rem;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  textarea.form-input {
+    height: 23rem;
+    font-weight: bold;
+    
+  }
+}
+
+#check {
+  display: flex;
+  gap: 1rem;
+
+  label {
+    font-size: 1.9rem;
+    color: #b2aeae;
+  }
+
+  .checkbox {
+    width: 2rem;
+    background-color: #fff;
+  }
+}
+
+
+
+button {
+  padding: 2rem 5.8rem;
+  text-align: center;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-size: 3rem;
+  margin: 0 auto;
+}
