@@ -11,9 +11,10 @@
 .menu{
     padding: 2rem;
     width: 100%;
+    position: fixed;
 
     .nav-menu{
-        background-color: aqua;
+        background-color: rgba(0,0,0,0);
         display: flex;
         justify-content: space-between;
     }

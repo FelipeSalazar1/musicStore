@@ -1,9 +1,13 @@
 import {} from 'react';
+import '../Scss/Home.scss'
 
 function Home() {
   return (
     <>
-    <h1>Home</h1>
+    <section id='home'>
+      <h1>Fullfilling dreams with strings attached</h1>
+    </section>
+    
     </>
   );
 }
