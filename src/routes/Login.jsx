@@ -42,7 +42,7 @@ export default function Contato() {
             <input type="password" placeholder="Digite sua senha" ref={senha} />
           </p>
           
-          <button className="btn_enter" type="button">
+          <button className="btn_enter" type="submit">
             <strong>ENTRAR</strong>
             <div className="container-stars">
               <div className="stars"></div>
