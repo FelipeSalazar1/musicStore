@@ -28,34 +28,37 @@ export default function Contato() {
 
   return (
     <section className="login">
-      {getUsuario && getSenha ? (
-        <Produtos/>
-      ) : (
-        <form onSubmit={handleSubmit} >
-        <h1 className='tittle'>Sign In</h1>
-          <p>
-            USUÁRIO <br/>
-            <input type="text" placeholder="Digite seu Usuário" ref={usuario} />
-          </p>
-          <p>
-            SENHA <br/>
-            <input type="password" placeholder="Digite sua senha" ref={senha} />
-          </p>
-          
-          <button className="btn_enter" type="submit">
-            <strong>ENTRAR</strong>
-            <div className="container-stars">
-              <div className="stars"></div>
-            </div>
+      <div id='form-total'>
+        {getUsuario && getSenha ? (
+          <Produtos/>
+        ) : (
+          <form onSubmit={handleSubmit} >
+          <h1 className='tittle'>Sign In</h1>
+            <p>
+              USUÁRIO <br/>
+              <input type="text" placeholder="Digite seu Usuário" ref={usuario} />
+            </p>
+            <p>
+              SENHA <br/>
+              <input type="password" placeholder="Digite sua senha" ref={senha} />
+            </p>
+            
+            <button className="btn_enter" type="submit">
+              <strong>ENTRAR</strong>
+              <div className="container-stars">
+                <div className="stars"></div>
+              </div>
 
-            <div className="glow">
-              <div className="circle"></div>
-              <div className="circle"></div>
-            </div>
-          </button>
-          
-        </form>
-      )}
+              <div className="glow">
+                <div className="circle"></div>
+                <div className="circle"></div>
+              </div>
+            </button>
+            
+          </form>
+        )}
+      </div>
+      
     </section>
     );
   }

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Work Sans;
 }
 
 :root {
@@ -15,12 +16,18 @@ html {
 .login {
     display: flex;
     justify-content: center;
-    margin: 20rem auto 20rem auto;
+    height: 80vh;
+    
+#form-total{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 form {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+
     gap: 1rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     padding: 5rem;
@@ -29,7 +36,7 @@ form {
 }
 
 p {
-    font-family: 'Courier New', Courier, monospace;
+    
     font-size: 1.6rem;
 }
 
