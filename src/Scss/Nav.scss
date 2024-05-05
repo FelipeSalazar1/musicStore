@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: Work Sans;
 }
+:root {
+    font-size: 62.5%;
+}
 
 .menu{
     padding: 2rem;
@@ -12,14 +15,23 @@
     .nav-menu{
         background-color: aqua;
         display: flex;
-        justify-content: space-evenly;
-        ul{
-            align-items: center;
+        justify-content: space-between;
+    }
+        #cont-left-nav{
             display: flex;
             justify-content: space-around;
-            .tlink{
-                text-decoration: none;
+            width: 70%;
+            ul{
+                align-items: center;
+                display: flex;
+                justify-content: space-evenly;
+                gap: 2.4rem;
+                .tlink{
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 1.8rem;
+                }
             }
         }
+        
     }
-}

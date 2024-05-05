@@ -10,20 +10,23 @@ export default function Nav() {
     <>
       <header className="menu">
         <nav className="nav-menu">
-          <img src={Logo} alt="logo-nav" />
-          <ul>
-            <Link to="/" className="tlink">
-              Home
-            </Link>
+          <div id='cont-left-nav'>
+            <img src={Logo} alt="logo-nav" />
+            <ul>
+              <Link to="/" className="tlink">
+                Home
+              </Link>
 
-            <Link to="/Contato" className="tlink">
-              Contato
-            </Link>
+              <Link to="/Contato" className="tlink">
+                Contato
+              </Link>
 
-            <Link to="/Login" className="tlink">
-              Login
-            </Link>
-          </ul>
+              <Link to="/Login" className="tlink">
+                Login
+              </Link>
+            </ul>
+          </div>
+          
           <div id='icons-nav'>
             <img src={Cart} alt="carrinho"/>
             <img src={Profile} alt="carrinho"/>
