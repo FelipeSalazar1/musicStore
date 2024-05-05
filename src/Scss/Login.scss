@@ -62,9 +62,9 @@ input {
     background-image: linear-gradient(#212121, #212121),  linear-gradient(137.48deg, #ffdb3b 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
     background-origin: border-box;
     background-clip: content-box, border-box;
-  }
+}
   
-  .container-stars {
+.container-stars {
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -73,68 +73,68 @@ input {
     transition: 0.5s;
     backdrop-filter: blur(1rem);
     border-radius: 5rem;
-  }
+}
   
-  strong {
+strong {
     z-index: 2;
     font-family: 'Avalors Personal Use';
     font-size: 12px;
     letter-spacing: 5px;
     color: #FFFFFF;
     text-shadow: 0 0 4px white;
-  }
+}
   
-  .glow {
+.glow {
     position: absolute;
     display: flex;
     width: 12rem;
-  }
+}
   
-  .circle {
+.circle {
     width: 100%;
     height: 30px;
     filter: blur(2rem);
     animation: pulse_3011 4s infinite;
     z-index: -1;
-  }
+}
   
-  .circle:nth-of-type(1) {
+.circle:nth-of-type(1) {
     background: rgba(254, 83, 186, 0.636);
   }
   
-  .circle:nth-of-type(2) {
+.circle:nth-of-type(2) {
     background: rgba(142, 81, 234, 0.704);
   }
   
-  .btn_enter:hover .container-stars {
+.btn_enter:hover #container-stars {
     z-index: 1;
     background-color: #212121;
   }
   
-  .btn_enter:hover {
+.btn_enter:hover {
     transform: scale(1.03);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
   
-  .btn:active {
+.btn:active {
     border: double 4px #FE53BB;
     background-origin: border-box;
     background-clip: content-box, border-box;
     animation: none;
   }
   
-  .btn:active .circle {
+.btn:active .circle {
     background: #FE53BB;
   }
   
-  .stars {
+.stars {
     position: relative;
     background: transparent;
     width: 200rem;
     height: 200rem;
   }
   
-  .stars::after {
+.stars::after {
     content: "";
     position: absolute;
     top: -10rem;
@@ -142,12 +142,12 @@ input {
     width: 100%;
     height: 100%;
     animation: animStarRotate 90s linear infinite;
-  }
+}
   
-  .stars::after {
+.stars::after {
     background-image: radial-gradient(#ffffff 1px, transparent 1%);
     background-size: 50px 50px;
-  }
+}
   
   .stars::before {
     content: "";
