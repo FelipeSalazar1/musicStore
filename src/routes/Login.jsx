@@ -41,7 +41,19 @@ export default function Contato() {
             SENHA <br/>
             <input type="password" placeholder="Digite sua senha" ref={senha} />
           </p>
-          <button type="submit" className='btn_enter'>ENTRAR</button>
+          
+          <button className="btn_enter" type="button">
+            <strong>ENTRAR</strong>
+            <div id="container-stars">
+              <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+          </button>
+          
         </form>
       )}
     </section>
