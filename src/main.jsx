@@ -6,6 +6,7 @@ import Home from './routes/Home.jsx'
 import Login from './routes/Login.jsx'
 import Produtos from './routes/Produtos.jsx'
 import Contato from './routes/Contato.jsx'
+import Error from './routes/Error.jsx'
 
 const router = createBrowserRouter ([
   {
