@@ -11,15 +11,14 @@
 #home{
     background-image: url(../assets/back-home.svg);
     width: 100%;
-    height: 95vh;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 7rem;
-    padding-left: 9rem;
+    padding: 5rem 9rem 5rem 9rem;
     
     #cont-home{
         text-align: left;
@@ -31,4 +30,112 @@
         }
     }
     
+}
+
+
+#equipment{
+    background-color: #fff;
+    padding: 5rem 9rem 5rem 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+
+    #tittle-equipment{
+        color: #505050;
+        font-size: 2.5rem;
+        text-align: center;
+
+    }
+
+    #cards-line1{
+        display: flex;
+        gap: 3.2rem;
+        
+        .card1{
+            color: white;
+            font-weight: 600;
+            background-color: #252525;
+            border-radius: 10px;
+            transition: .6s;
+            
+
+            #info-card{
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+            }
+
+            h3{
+                font-size: 2.2rem;
+            }
+            p{
+                font-size: 1.6rem;
+                color: #C4C4C4;
+                font-weight: 500;
+            }
+            img{
+                width: 100%;
+            }
+        }
+
+        #a2{
+            background-color: #EAEAEA;
+
+            h3{
+                color: #202020;
+            }
+            p{
+                color: #767676;
+            }
+        }
+    }
+    #cards-line2{
+        display: flex;
+        gap: 3.2rem;
+
+        .card2{
+            color: white;
+            font-weight: 600;
+            background-color: #252525;
+            border-radius: 10px;
+            transition: .6s;
+
+            #info-card{
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+            }
+
+            h3{
+                font-size: 2.2rem;
+            }
+            p{
+                font-size: 1.6rem;
+                color: #C4C4C4;
+                font-weight: 500;
+            }
+            img{
+                width: 100%;
+            }
+        }
+
+        #a2{
+            background-color: #EAEAEA;
+
+            h3{
+                color: #202020;
+            }
+            p{
+                color: #767676;
+            }
+        }
+    }
+
+    .card1:hover, .card2:hover{
+        cursor: pointer;
+        transform: scale(1.05);
+    }
 }
