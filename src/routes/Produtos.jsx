@@ -44,12 +44,12 @@ export default function Produtos() {
   const [editPopupOpen, setEditPopupOpen] = useState(false);
   const [addPopupOpen, setAddPopupOpen] = useState(false);
   const [products, setProducts] = useState([
-    { imgSrc: amarelo, title: "Guitarra Amarela", description: "Descrição", price: "$2,995" },
-    { imgSrc: vermelho, title: "Guitarra Vermelha", description: "Descrição", price: "$2,995" },
-    { imgSrc: marrom, title: "Guitarra Marrom", description: "Descrição", price: "$2,995" },
-    { imgSrc: caboAmarelo, title: "Cabo Amarelo", description: "Descrição", price: "$2,995" },
-    { imgSrc: caboVerde, title: "Cabo Verde", description: "Descrição", price: "$2,995" },
-    { imgSrc: pedaleira, title: "Pedaleira", description: "Descrição", price: "$2,995" }
+    { id: 1, imgSrc: amarelo, title: "Guitarra Amarela", description: "Descrição", price: "$2,995" },
+    { id: 2, imgSrc: vermelho, title: "Guitarra Vermelha", description: "Descrição", price: "$2,995" },
+    { id: 3, imgSrc: marrom, title: "Guitarra Marrom", description: "Descrição", price: "$2,995" },
+    { id: 4, imgSrc: caboAmarelo, title: "Cabo Amarelo", description: "Descrição", price: "$2,995" },
+    { id: 5, imgSrc: caboVerde, title: "Cabo Verde", description: "Descrição", price: "$2,995" },
+    { id: 6, imgSrc: pedaleira, title: "Pedaleira", description: "Descrição", price: "$2,995" }
   ]);
 
   const handleLogout = () => {
@@ -87,7 +87,7 @@ export default function Produtos() {
 
   const handleUpdate = () => {
     // Encontra o índice do produto na lista
-    const index = products.findIndex(p => p.title === selectedProduct.title);
+    const index = products.findIndex(p => p.id === selectedProduct.id);
 
     // Se o produto não for encontrado, retorna
     if (index === -1) {
