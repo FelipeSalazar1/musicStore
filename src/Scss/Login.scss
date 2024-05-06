@@ -16,7 +16,6 @@ html {
 .login {
     display: flex;
     justify-content: center;
-    height: 65vh;
     
   #form-total{
     display: flex;
@@ -32,6 +31,7 @@ html {
     padding: 5rem;
     border-radius: 1.3rem;
     background-color: #e8e8e8;
+    margin: 15rem 0;
 }
 
 p {
