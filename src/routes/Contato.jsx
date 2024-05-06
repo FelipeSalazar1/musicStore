@@ -4,8 +4,10 @@ export default function Contato() {
     return (
       <>
       <section className="contact">
-        <h1 className="form-title">CONTATE-NOS</h1>
-
+        <div id='tittle-form'>
+          <h1 className="form-title">CONTATE-NOS</h1>
+        </div>
+        
         <form className="forms">
           <div className="form-group">
             <input

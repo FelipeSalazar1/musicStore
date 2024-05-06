@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-size: 62.5%;
+}
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -11,27 +15,29 @@
   justify-content: center;
   height: 100vh;
   background-color: #353535;
+  padding: 30rem 20rem 25rem 20rem;
+  gap: 2rem;
 
   h1{
-    font-family: Poppins;
+    font-size: 3rem;
   }
 }
 
 
+#tittle-form{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-
-.form-title,
-button {
-  font-size: 5.4rem;
+.form-title{
   color: #000;
   background-color: #c4c4c4;
-  font-family: Poppins;
   text-align: center;
-  padding: 2rem 2rem;
-  width: 46rem;
+  padding: 1rem;
+  width: 30%;
   font-weight: bold;
   border-radius: 15px;
-  margin: 4rem 0;
 }
 
 .forms {
@@ -40,22 +46,23 @@ button {
   font-family: Open Sans;
   gap: 2rem;
   background-color: #353535;
+  width: 50%;
+  height: 100vh;
 
   .form-input {
     width: 100%;
+    height: 5rem;
     padding: 2rem;
     border: none;
-    font-size: 1rem;
     background-color: #fff;
     color: #939191;
     border-radius: 20px;
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     font-weight: bold;
-    font-family: 'Nunito', sans-serif;
   }
 
   textarea.form-input {
-    height: 23rem;
+    height: 15rem;
     font-weight: bold;
     
   }
@@ -66,7 +73,7 @@ button {
   gap: 1rem;
 
   label {
-    font-size: 1.9rem;
+    font-size: 1.4rem;
     color: #b2aeae;
   }
 
@@ -79,11 +86,14 @@ button {
 
 
 button {
-  padding: 2rem 5.8rem;
+  padding: 2rem 3rem;
+  width: 70%;
   text-align: center;
   color: #000;
   border: none;
   cursor: pointer;
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 0 auto;
+  font-weight: 700;
+  border-radius: 15px;
 }
