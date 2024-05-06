@@ -24,12 +24,12 @@ const ProductTable = ({ products, onEdit, onDelete }) => (
     <tbody>
       {products.map(product => (
         <tr key={product.title} className='product-card'>
-          <td id='img'><img src={product.imgSrc} alt={product.title} className='img-product'/></td>
+          <td id='td-img'><img src={product.imgSrc} alt={product.title} className='img-product'/></td>
           <div id="highlighted">
-            <td id="title">{product.title}</td>
-            <td id="price">{product.price}</td>
+            <td id="td-title">{product.title}</td>
+            <td id="td-price">{product.price}</td>
           </div>
-          <td id="description">{product.description}</td> 
+          <td id="td-description">{product.description}</td> 
           <td className='btn-edit'>
             <button onClick={() => onEdit(product)} className='btn-prod'>Edit</button>
             <button onClick={() => onDelete(product)} className='btn-prod'>Delete</button>
