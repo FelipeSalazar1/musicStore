@@ -16,13 +16,12 @@ html {
 .login {
     display: flex;
     justify-content: center;
-    height: 95vh;
     
-#form-total{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+  #form-total{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
 form {
     display: flex;
