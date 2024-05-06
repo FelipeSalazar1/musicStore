@@ -41,10 +41,7 @@
   }
 
   #produtos-new {
-    display: flex;
-    flex-wrap: wrap; /* Alterando para que os produtos quebrem linha conforme necessário */
-    justify-content: space-between; /* Distribuindo o espaço entre os produtos */
-    gap: 3.2rem;
+    gap: 7.2rem;
 
     .card-product {
       width: calc(50% - 1.6rem); /* Definindo a largura para 50% - espaço para o gap */

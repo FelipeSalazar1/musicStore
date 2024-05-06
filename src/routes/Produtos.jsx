@@ -22,14 +22,14 @@ const ProductTable = ({ products, onEdit, onDelete }) => (
       </tr>
     </thead>
     <tbody>
-      {products.map((product, index) => (
-        <tr key={index}>
+      {products.map(product => (
+        <tr key={product.title}>
           <td><img src={product.imgSrc} alt={product.title} className='img-product'/></td>
           <td>{product.title}</td>
           <td>{product.description}</td>
           <td>{product.price}</td>
           <td>
-            <button onClick={() => onEdit({ ...product })}>Edit</button>
+            <button onClick={() => onEdit(product)}>Edit</button>
             <button onClick={() => onDelete(product)}>Delete</button>
           </td>
         </tr>
@@ -42,6 +42,7 @@ export default function Produtos() {
   const navigate = useNavigate();
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [editPopupOpen, setEditPopupOpen] = useState(false);
+  const [addPopupOpen, setAddPopupOpen] = useState(false);
   const [products, setProducts] = useState([
     { imgSrc: amarelo, title: "Guitarra Amarela", description: "Descrição", price: "$2,995" },
     { imgSrc: vermelho, title: "Guitarra Vermelha", description: "Descrição", price: "$2,995" },
@@ -60,10 +61,8 @@ export default function Produtos() {
 
   const handleEdit = (product) => {
     setSelectedProduct(product);
-    console.log("Selected product:", product);
     setEditPopupOpen(true);
   };
-  
 
   const handleDelete = (product) => {
     setProducts(prevProducts => prevProducts.filter(p => p !== product));
@@ -73,14 +72,40 @@ export default function Produtos() {
     setEditPopupOpen(false);
   };
 
-  const handleSave = () => {
-    console.log("Save button clicked");
-    if (selectedProduct) {
-      setProducts(prevProducts =>
-        prevProducts.map(p => (p === selectedProduct ? { ...selectedProduct } : p))
-      );
-      setEditPopupOpen(false);
+  const handleAdd = () => {
+    setAddPopupOpen(true);
+  };
+
+  const handleCloseAddPopup = () => {
+    setAddPopupOpen(false);
+  };
+
+  const handleSave = (newProduct) => {
+    setProducts(prevProducts => [...prevProducts, newProduct]);
+    setAddPopupOpen(false);
+  };
+
+  const handleUpdate = () => {
+    // Encontra o índice do produto na lista
+    const index = products.findIndex(p => p.title === selectedProduct.title);
+  
+    // Se o produto não for encontrado, retorna
+    if (index === -1) {
+      console.error('Produto não encontrado na lista.');
+      return;
     }
+  
+    // Cria uma cópia da lista de produtos
+    const updatedProducts = [...products];
+  
+    // Substitui o produto antigo pelo produto atualizado
+    updatedProducts[index] = selectedProduct;
+  
+    // Atualiza o estado com a nova lista de produtos
+    setProducts(updatedProducts);
+  
+    // Fecha o popup de edição
+    setEditPopupOpen(false);
   };
   
   
@@ -100,6 +125,7 @@ export default function Produtos() {
           </div>
         </div>
       </section>
+      <button onClick={handleAdd}>Add Product</button>
       {editPopupOpen && (
         <div className="edit-popup-overlay">
           <div className="edit-popup">
@@ -107,26 +133,43 @@ export default function Produtos() {
             <label>Title:</label>
             <input 
               type="text" 
-              name="title" 
               value={selectedProduct.title} 
               onChange={(e) => setSelectedProduct(prevProduct => ({ ...prevProduct, title: e.target.value }))} 
             />
             <label>Description:</label>
             <input 
               type="text" 
-              name="description" 
               value={selectedProduct.description} 
               onChange={(e) => setSelectedProduct(prevProduct => ({ ...prevProduct, description: e.target.value }))} 
             />
             <label>Price:</label>
             <input 
               type="text" 
-              name="price" 
               value={selectedProduct.price} 
               onChange={(e) => setSelectedProduct(prevProduct => ({ ...prevProduct, price: e.target.value }))} 
             />
-            <button onClick={handleSave}>Save</button>
+            <button onClick={handleUpdate}>Update</button>
             <button onClick={handleCloseEditPopup}>Cancel</button>
+          </div>
+        </div>
+      )}
+      {addPopupOpen && (
+        <div className="edit-popup-overlay">
+          <div className="edit-popup">
+            <h2>Add Product</h2>
+            <label>Title:</label>
+            <input type="text" id="title" />
+            <label>Description:</label>
+            <input type="text" id="description" />
+            <label>Price:</label>
+            <input type="text" id="price" />
+            <button onClick={() => handleSave({
+              imgSrc: "", // Coloque a URL da imagem aqui
+              title: document.getElementById('title').value,
+              description: document.getElementById('description').value,
+              price: document.getElementById('price').value
+            })}>Save</button>
+            <button onClick={handleCloseAddPopup}>Cancel</button>
           </div>
         </div>
       )}
