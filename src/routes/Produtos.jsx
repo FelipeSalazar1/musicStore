@@ -14,8 +14,8 @@ const ProductTable = ({ products, onEdit, onDelete }) => (
   <table className="product-table">
     <thead>
       <tr>
-        <th>Image</th>
-        <th>Title</th>
+        <th>Imagem</th>
+        <th>Titulo</th>
         <th>Description</th>
         <th>Price</th>
         <th>Actions</th>
@@ -88,68 +88,76 @@ export default function Produtos() {
   const handleUpdate = () => {
     // Encontra o índice do produto na lista
     const index = products.findIndex(p => p.title === selectedProduct.title);
-  
+
     // Se o produto não for encontrado, retorna
     if (index === -1) {
       console.error('Produto não encontrado na lista.');
       return;
     }
-  
+
+    // Cria uma cópia do produto selecionado
+    const updatedProduct = { ...selectedProduct };
+
+    // Atualiza os campos do produto
+    updatedProduct.title = document.getElementById('edit-title').value;
+    updatedProduct.description = document.getElementById('edit-description').value;
+    updatedProduct.price = document.getElementById('edit-price').value;
+
     // Cria uma cópia da lista de produtos
     const updatedProducts = [...products];
-  
+
     // Substitui o produto antigo pelo produto atualizado
-    updatedProducts[index] = selectedProduct;
-  
+    updatedProducts[index] = updatedProduct;
+
     // Atualiza o estado com a nova lista de produtos
     setProducts(updatedProducts);
-  
+
     // Fecha o popup de edição
     setEditPopupOpen(false);
   };
-  
-  
 
   return (
     <>
       <section className='produtos'>
         <button id='button-logout' onClick={handleLogout}>Logout</button>
-
+        <button onClick={handleAdd} id='button-logout'>Adicionar Produto</button>
         <div className="produtos-group1">
           <div id='tittle-produto'>
             <img src={line} alt="Line" />
-            <h1>Products</h1>
+            <h1>Produtos</h1>
           </div>
           <div id='produtos-new'>
             <ProductTable products={products} onEdit={handleEdit} onDelete={handleDelete} />
           </div>
         </div>
       </section>
-      <button onClick={handleAdd}>Add Product</button>
       {editPopupOpen && (
         <div className="edit-popup-overlay">
           <div className="edit-popup">
-            <h2>Edit Product</h2>
-            <label>Title:</label>
+            <h2>Editar Produto</h2>
+            <label>Titulo:</label>
             <input 
               type="text" 
+              id="edit-title" 
               value={selectedProduct.title} 
               onChange={(e) => setSelectedProduct(prevProduct => ({ ...prevProduct, title: e.target.value }))} 
             />
-            <label>Description:</label>
+            <label>Descrição</label>
             <input 
               type="text" 
+              id="edit-description" 
               value={selectedProduct.description} 
               onChange={(e) => setSelectedProduct(prevProduct => ({ ...prevProduct, description: e.target.value }))} 
             />
-            <label>Price:</label>
+            <label>Preço:</label>
             <input 
               type="text" 
+              id="edit-price" 
               value={selectedProduct.price} 
               onChange={(e) => setSelectedProduct(prevProduct => ({ ...prevProduct, price: e.target.value }))} 
             />
-            <button onClick={handleUpdate}>Update</button>
-            <button onClick={handleCloseEditPopup}>Cancel</button>
+            <button onClick={handleUpdate}>Atualizar</button>
+            <button onClick={handleCloseEditPopup}>Cancelar</button>
           </div>
         </div>
       )}
