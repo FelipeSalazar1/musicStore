@@ -40,8 +40,8 @@ export default function Produtos() {
   }
 
   const handleEdit = (product) => {
-    console.log(`Editing product: ${product}`);
-    
+    console.log(`Editando produto: ${product}`);
+
   }
 
   return (
