@@ -122,3 +122,19 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 998;
 }
+
+.btn-prod {
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.btn-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 60%;
+}
+
+td {
+  padding: 2rem;
+}

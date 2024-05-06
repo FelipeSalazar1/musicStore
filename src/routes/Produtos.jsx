@@ -16,21 +16,21 @@ const ProductTable = ({ products, onEdit, onDelete }) => (
       <tr>
         <th>Imagem</th>
         <th>Titulo</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Actions</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
       {products.map(product => (
-        <tr key={product.title}>
+        <tr key={product.title} className='product-card'>
           <td><img src={product.imgSrc} alt={product.title} className='img-product'/></td>
           <td>{product.title}</td>
           <td>{product.description}</td>
           <td>{product.price}</td>
-          <td>
-            <button onClick={() => onEdit(product)}>Edit</button>
-            <button onClick={() => onDelete(product)}>Delete</button>
+          <td className='btn-edit'>
+            <button onClick={() => onEdit(product)} className='btn-prod'>Edit</button>
+            <button onClick={() => onDelete(product)} className='btn-prod'>Delete</button>
           </td>
         </tr>
       ))}
@@ -164,19 +164,19 @@ export default function Produtos() {
       {addPopupOpen && (
         <div className="edit-popup-overlay">
           <div className="edit-popup">
-            <h2>Add Product</h2>
-            <label>Title:</label>
+            <h2>Adicionar produto</h2>
+            <label>Produto:</label>
             <input type="text" id="title" />
-            <label>Description:</label>
+            <label>Descrição:</label>
             <input type="text" id="description" />
-            <label>Price:</label>
+            <label>Preço:</label>
             <input type="text" id="price" />
             <button onClick={() => handleSave({
               imgSrc: "", // Coloque a URL da imagem aqui
               title: document.getElementById('title').value,
               description: document.getElementById('description').value,
               price: document.getElementById('price').value
-            })}>Save</button>
+            })}>Salvar</button>
             <button onClick={handleCloseAddPopup}>Cancel</button>
           </div>
         </div>
