@@ -10,6 +10,7 @@ export default function Nav() {
     <>
       <header className="menu">
         <nav className="nav-menu">
+           {/* Componente de navegação principal */}
           <div id='cont-left-nav'>
             <img src={Logo} alt="logo-nav" />
             <ul>
@@ -27,6 +28,7 @@ export default function Nav() {
             </ul>
           </div>
           
+           {/* Ícones de ações rápidas */}
           <div id='icons-nav'>
             <img src={Cart} alt="carrinho"/>
             <img src={Profile} alt="carrinho"/>

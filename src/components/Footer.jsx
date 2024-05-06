@@ -36,6 +36,7 @@ function Footer() {
             <img src={LOGOPRIMEMUSIC} alt="logo-tema"/>
           </div>
           <div className='social'>
+             {/* Ícones das redes sociais */}
             <ul className='icons-footer'>
               <li>
                 <FaFacebookSquare /> 
