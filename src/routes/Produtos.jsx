@@ -74,8 +74,13 @@ export default function Produtos() {
   }
 
   const handleEdit = (product) => {
+<<<<<<< HEAD
     setSelectedProduct(product);
     setEditPopupOpen(true);
+=======
+    console.log(`Editando produto: ${product}`);
+
+>>>>>>> b85f955a47e45b7028ac78a0db8e4ed63c7b158a
   }
 
   const handleCloseEditPopup = () => {
