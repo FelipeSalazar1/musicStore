@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Scss/Produtos.scss'
 import line from '../assets/Line.svg'
@@ -29,8 +29,42 @@ const ProductCard = ({ imgSrc, title, description, price, onEdit }) => (
   </div>
 );
 
+const EditPopup = ({ product, onClose }) => {
+  const [editedProduct, setEditedProduct] = useState(product);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEditedProduct(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSave = () => {
+    // Aqui você pode implementar a lógica para salvar as alterações do produto
+    console.log("Salvando alterações:", editedProduct);
+    onClose();
+  };
+
+  return (
+    <div className="edit-popup">
+      <h2>Edit Product</h2>
+      <label>Title:</label>
+      <input type="text" name="title" value={editedProduct.title} onChange={handleChange} />
+      <label>Description:</label>
+      <input type="text" name="description" value={editedProduct.description} onChange={handleChange} />
+      <label>Price:</label>
+      <input type="text" name="price" value={editedProduct.price} onChange={handleChange} />
+      <button onClick={handleSave}>Save</button>
+      <button onClick={onClose}>Cancel</button>
+    </div>
+  );
+};
+
 export default function Produtos() {
   const navigate = useNavigate();
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [editPopupOpen, setEditPopupOpen] = useState(false);
 
   const handleLogout = () => {
     sessionStorage.removeItem("usuario");
@@ -40,9 +74,13 @@ export default function Produtos() {
   }
 
   const handleEdit = (product) => {
-    console.log(`Editing product: ${product}`);
-    
+    setSelectedProduct(product);
+    setEditPopupOpen(true);
   }
+
+  const handleCloseEditPopup = () => {
+    setEditPopupOpen(false);
+  };
 
   return (
     <>
@@ -55,9 +93,9 @@ export default function Produtos() {
             <h1>Lançamentos</h1>
           </div>
           <div id='produtos-new'>
-            <ProductCard imgSrc={amarelo} title="Guitarra Amarela" description="Descrição" price="$2,995" />
-            <ProductCard imgSrc={vermelho} title="Guitarra Vermelha" description="Descrição" price="$2,995" />
-            <ProductCard imgSrc={marrom} title="Guitarra Marrom" description="Descrição" price="$2,995" />
+            <ProductCard imgSrc={amarelo} title="Guitarra Amarela" description="Descrição" price="$2,995" onEdit={() => handleEdit("Guitarra Amarela")} />
+            <ProductCard imgSrc={vermelho} title="Guitarra Vermelha" description="Descrição" price="$2,995" onEdit={() => handleEdit("Guitarra Vermelha")} />
+            <ProductCard imgSrc={marrom} title="Guitarra Marrom" description="Descrição" price="$2,995" onEdit={() => handleEdit("Guitarra Marrom")} />
           </div>
         </div>
 
@@ -67,12 +105,17 @@ export default function Produtos() {
             <h1>Popular Finds</h1>
           </div>
           <div id='produtos-new'>
-            <ProductCard imgSrc={caboAmarelo} title="Cabo Amarelo" description="Descrição" price="$2,995" />
-            <ProductCard imgSrc={caboVerde} title="Cabo Verde" description="Descrição" price="$2,995" />
-            <ProductCard imgSrc={pedaleira} title="Pedaleira" description="Descrição" price="$2,995" />
+            <ProductCard imgSrc={caboAmarelo} title="Cabo Amarelo" description="Descrição" price="$2,995" onEdit={() => handleEdit("Cabo Amarelo")} />
+            <ProductCard imgSrc={caboVerde} title="Cabo Verde" description="Descrição" price="$2,995" onEdit={() => handleEdit("Cabo Verde")} />
+            <ProductCard imgSrc={pedaleira} title="Pedaleira" description="Descrição" price="$2,995" onEdit={() => handleEdit("Pedaleira")} />
           </div>
         </div>
       </section>
+      {editPopupOpen && (
+        <div className="edit-popup-overlay">
+          <EditPopup product={selectedProduct} onClose={handleCloseEditPopup} />
+        </div>
+      )}
     </>
   );
 }
