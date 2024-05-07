@@ -167,6 +167,8 @@ export default function Produtos() {
         <div className="edit-popup-overlay">
           <div className="edit-popup">
             <h2>Adicionar produto</h2>
+            <label>Imagem:</label>
+            <input type="text" id="img" />
             <label>Produto:</label>
             <input type="text" id="title" />
             <label>Descrição:</label>
@@ -174,7 +176,7 @@ export default function Produtos() {
             <label>Preço:</label>
             <input type="text" id="price" />
             <button onClick={() => handleSave({
-              imgSrc: "", // Coloque a URL da imagem aqui
+              imgSrc: document.getElementById('img').value,
               title: document.getElementById('title').value,
               description: document.getElementById('description').value,
               price: document.getElementById('price').value
