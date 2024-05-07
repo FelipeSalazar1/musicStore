@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../Scss/Produtos.scss';
-import line from '../assets/Line.svg';
-import available from '../assets/Chips.svg';
-import amarelo from '../assets/gui-amarela.svg';
-import vermelho from '../assets/gui-vermelha.svg';
-import marrom from '../assets/gui-marrom.svg';
-import caboAmarelo from '../assets/cabo-amarelo.svg';
-import caboVerde from '../assets/cabo-verde.svg';
-import pedaleira from '../assets/music.svg';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../Scss/Produtos.scss";
+import line from "../assets/Line.svg";
+import available from "../assets/Chips.svg";
+import amarelo from "../assets/gui-amarela.svg";
+import vermelho from "../assets/gui-vermelha.svg";
+import marrom from "../assets/gui-marrom.svg";
+import caboAmarelo from "../assets/cabo-amarelo.svg";
+import caboVerde from "../assets/cabo-verde.svg";
+import pedaleira from "../assets/music.svg";
 
 const ProductTable = ({ products, onEdit, onDelete }) => (
   <table className="product-table">
@@ -22,17 +22,27 @@ const ProductTable = ({ products, onEdit, onDelete }) => (
       </tr>
     </thead>
     <tbody>
-      {products.map(product => (
-        <tr key={product.title} className='product-card'>
-          <td id='td-img'><img src={product.imgSrc} alt={product.title} className='img-product'/></td>
+      {products.map((product) => (
+        <tr key={product.title} className="product-card">
+          <td id="td-img">
+            <img
+              src={product.imgSrc}
+              alt={product.title}
+              className="img-product"
+            />
+          </td>
           <div id="highlighted">
             <td id="td-title">{product.title}</td>
             <td id="td-price">{product.price}</td>
           </div>
-          <td id="td-description">{product.description}</td> 
-          <td className='btn-edit'>
-            <button onClick={() => onEdit(product)} className='btn-prod'>Edit</button>
-            <button onClick={() => onDelete(product)} className='btn-prod'>Delete</button>
+          <td id="td-description">{product.description}</td>
+          <td className="btn-edit">
+            <button onClick={() => onEdit(product)} className="btn-prod">
+              Edit
+            </button>
+            <button onClick={() => onDelete(product)} className="btn-prod">
+              Delete
+            </button>
           </td>
         </tr>
       ))}
@@ -46,12 +56,48 @@ export default function Produtos() {
   const [editPopupOpen, setEditPopupOpen] = useState(false);
   const [addPopupOpen, setAddPopupOpen] = useState(false);
   const [products, setProducts] = useState([
-    { id: 1, imgSrc: amarelo, title: "Guitarra Amarela", description: "Descrição", price: "$2,995" },
-    { id: 2, imgSrc: vermelho, title: "Guitarra Vermelha", description: "Descrição", price: "$2,995" },
-    { id: 3, imgSrc: marrom, title: "Guitarra Marrom", description: "Descrição", price: "$2,995" },
-    { id: 4, imgSrc: caboAmarelo, title: "Cabo Amarelo", description: "Descrição", price: "$2,995" },
-    { id: 5, imgSrc: caboVerde, title: "Cabo Verde", description: "Descrição", price: "$2,995" },
-    { id: 6, imgSrc: pedaleira, title: "Pedaleira", description: "Descrição", price: "$2,995" }
+    {
+      id: 1,
+      imgSrc: amarelo,
+      title: "Guitarra Amarela",
+      description: "Descrição",
+      price: "$2,995",
+    },
+    {
+      id: 2,
+      imgSrc: vermelho,
+      title: "Guitarra Vermelha",
+      description: "Descrição",
+      price: "$2,995",
+    },
+    {
+      id: 3,
+      imgSrc: marrom,
+      title: "Guitarra Marrom",
+      description: "Descrição",
+      price: "$2,995",
+    },
+    {
+      id: 4,
+      imgSrc: caboAmarelo,
+      title: "Cabo Amarelo",
+      description: "Descrição",
+      price: "$2,995",
+    },
+    {
+      id: 5,
+      imgSrc: caboVerde,
+      title: "Cabo Verde",
+      description: "Descrição",
+      price: "$2,995",
+    },
+    {
+      id: 6,
+      imgSrc: pedaleira,
+      title: "Pedaleira",
+      description: "Descrição",
+      price: "$2,995",
+    },
   ]);
 
   const handleLogout = () => {
@@ -67,7 +113,7 @@ export default function Produtos() {
   };
 
   const handleDelete = (product) => {
-    setProducts(prevProducts => prevProducts.filter(p => p !== product));
+    setProducts((prevProducts) => prevProducts.filter((p) => p !== product));
   };
 
   const handleCloseEditPopup = () => {
@@ -83,17 +129,17 @@ export default function Produtos() {
   };
 
   const handleSave = (newProduct) => {
-    setProducts(prevProducts => [...prevProducts, newProduct]);
+    setProducts((prevProducts) => [...prevProducts, newProduct]);
     setAddPopupOpen(false);
   };
 
   const handleUpdate = () => {
     // Encontra o índice do produto na lista
-    const index = products.findIndex(p => p.id === selectedProduct.id);
+    const index = products.findIndex((p) => p.id === selectedProduct.id);
 
     // Se o produto não for encontrado, retorna
     if (index === -1) {
-      console.error('Produto não encontrado na lista.');
+      console.error("Produto não encontrado na lista.");
       return;
     }
 
@@ -101,9 +147,10 @@ export default function Produtos() {
     const updatedProduct = { ...selectedProduct };
 
     // Atualiza os campos do produto
-    updatedProduct.title = document.getElementById('edit-title').value;
-    updatedProduct.description = document.getElementById('edit-description').value;
-    updatedProduct.price = document.getElementById('edit-price').value;
+    updatedProduct.title = document.getElementById("edit-title").value;
+    updatedProduct.description =
+      document.getElementById("edit-description").value;
+    updatedProduct.price = document.getElementById("edit-price").value;
 
     // Cria uma cópia da lista de produtos
     const updatedProducts = [...products];
@@ -120,16 +167,24 @@ export default function Produtos() {
 
   return (
     <>
-      <section className='produtos'>
-        <button id='button-logout' onClick={handleLogout}>Logout</button>
-        <button onClick={handleAdd} id='button-logout'>Adicionar Produto</button>
+      <section className="produtos">
+        <button id="button-logout" onClick={handleLogout}>
+          Logout
+        </button>
+        <button onClick={handleAdd} id="button-logout">
+          Adicionar Produto
+        </button>
         <div className="produtos-group1">
-          <div id='tittle-produto'>
+          <div id="tittle-produto">
             <img src={line} alt="Line" />
             <h1>Produtos</h1>
           </div>
-          <div id='produtos-new'>
-            <ProductTable products={products} onEdit={handleEdit} onDelete={handleDelete} />
+          <div id="produtos-new">
+            <ProductTable
+              products={products}
+              onEdit={handleEdit}
+              onDelete={handleDelete}
+            />
           </div>
         </div>
       </section>
@@ -138,25 +193,40 @@ export default function Produtos() {
           <div className="edit-popup">
             <h2>Editar Produto</h2>
             <label>Titulo:</label>
-            <input 
-              type="text" 
-              id="edit-title" 
-              value={selectedProduct.title} 
-              onChange={(e) => setSelectedProduct(prevProduct => ({ ...prevProduct, title: e.target.value }))} 
+            <input
+              type="text"
+              id="edit-title"
+              value={selectedProduct.title}
+              onChange={(e) =>
+                setSelectedProduct((prevProduct) => ({
+                  ...prevProduct,
+                  title: e.target.value,
+                }))
+              }
             />
             <label>Descrição</label>
-            <input 
-              type="text" 
-              id="edit-description" 
-              value={selectedProduct.description} 
-              onChange={(e) => setSelectedProduct(prevProduct => ({ ...prevProduct, description: e.target.value }))} 
+            <input
+              type="text"
+              id="edit-description"
+              value={selectedProduct.description}
+              onChange={(e) =>
+                setSelectedProduct((prevProduct) => ({
+                  ...prevProduct,
+                  description: e.target.value,
+                }))
+              }
             />
             <label>Preço:</label>
-            <input 
-              type="text" 
-              id="edit-price" 
-              value={selectedProduct.price} 
-              onChange={(e) => setSelectedProduct(prevProduct => ({ ...prevProduct, price: e.target.value }))} 
+            <input
+              type="text"
+              id="edit-price"
+              value={selectedProduct.price}
+              onChange={(e) =>
+                setSelectedProduct((prevProduct) => ({
+                  ...prevProduct,
+                  price: e.target.value,
+                }))
+              }
             />
             <button onClick={handleUpdate}>Atualizar</button>
             <button onClick={handleCloseEditPopup}>Cancelar</button>
@@ -167,7 +237,7 @@ export default function Produtos() {
         <div className="edit-popup-overlay">
           <div className="edit-popup">
             <h2>Adicionar produto</h2>
-            <label>Imagem:</label>
+            <label>Imagem em URL:</label>
             <input type="text" id="img" />
             <label>Produto:</label>
             <input type="text" id="title" />
@@ -175,12 +245,18 @@ export default function Produtos() {
             <input type="text" id="description" />
             <label>Preço:</label>
             <input type="text" id="price" />
-            <button onClick={() => handleSave({
-              imgSrc: document.getElementById('img').value,
-              title: document.getElementById('title').value,
-              description: document.getElementById('description').value,
-              price: document.getElementById('price').value
-            })}>Salvar</button>
+            <button
+              onClick={() =>
+                handleSave({
+                  imgSrc: document.getElementById("img").value,
+                  title: document.getElementById("title").value,
+                  description: document.getElementById("description").value,
+                  price: document.getElementById("price").value,
+                })
+              }
+            >
+              Salvar
+            </button>
             <button onClick={handleCloseAddPopup}>Cancel</button>
           </div>
         </div>
